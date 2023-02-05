@@ -1,0 +1,8 @@
+# crontab entry for backing up database 
+
+# INSTALL
+# apt-get install cron
+# append this file to /etc/crontab
+# test and check logs with grep CRON /var/log/syslog
+
+0 0 * * 6 database_backup.sh # run backup.sh at midnight on Saturdays
