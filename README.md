@@ -10,32 +10,32 @@ Additionally includes scripts for backing up the database weekly and documentati
 - Logitech C270 USB webcam
 
 ## MySQL server setup
-'''
+```
 $sudo apt-get update
 $sudo apt-get install mysql-server
 $sudo service mysql start
-'''
+```
 
 ## Python MySQL connector setup
-'''
+```
 $sudo apt-get install python3
 $sudo python3 -m pip install --upgrade pip
 $sudo pip3 install mysql-connector-python
-'''
+```
 
 ## Set credentials
-'''
+```
 $mysql
 $mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
 $mysql> exit
 $mysql_secure_installation
 $mysql -u root -p password
-'''
+```
 TODO: create new user accounts & lockdown security
 
 
 ## Create database
-'''
+```
 $mysql> CREATE DATABASE mycelium;
 $mysql> USE mycelium;
 $mysql> SHOW DATABASES;
@@ -47,27 +47,26 @@ $mysql> ALTER TABLE images AUTO_INCREMENT = 1;
 $mysql> ALTER TABLE experiments AUTO_INCREMENT = 100;
 $mysql> SHOW TABLES;
 $mysql> EXIT;
-'''
+```
 
 ## Setup Monthly Backups
-'''
+```
 $gh repo clone pushbuttondesign/agar_imaging_database
 $cd agar_imaging_database
 $mysql> select @datadir
 $mysql> EXIT;
 $apt-get install cron
 $crontab ./crontab
-'''
+```
 
 ## Data entry
-'''
+```
 $sudo chmod +x ./plate_capture.py
 $./plate_capture.py
-'''
+```
 
 ## Database querying
-[GUI](https://www.mysql.com/products/workbench/
-[CMD](https://dev.mysql.com/doc/mysql-getting-started/en/)
-
-Querying computers must have local access, remote access to database is turned off
-It is suggested to add new users for each person accessing the database, increase backups if required
+- [GUI](https://www.mysql.com/products/workbench/)
+- [CMD](https://dev.mysql.com/doc/mysql-getting-started/en/)
+- Querying computers must have local access, remote access to database is turned off
+- It is suggested to add new users for each person accessing the database, increase backups if required
