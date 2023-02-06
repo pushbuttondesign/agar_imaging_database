@@ -39,8 +39,8 @@ TODO: create new user accounts & lockdown security
 $mysql> CREATE DATABASE mycelium;
 $mysql> USE mycelium;
 $mysql> SHOW DATABASES;
-$mysql> CREATE TABLE plates (serial_id INT unsigned AUTO_INCREMENT, experiment_id INT unsigned NOT NULL, species TINYTEXT NOT NULL, strain TINYTEXT NOT NULL, PRIMARY KEY (serial));
-$mysql> CREATE TABLE images (image_id INT unsigned AUTO_INCREMENT, serial_id INT unsigned NOT NULL, image_url VARCHAR(250) NOT NULL, date DATETIME(0) NOT NULL, PRIMARY KEY (image_number));
+$mysql> CREATE TABLE plates (serial_id INT unsigned AUTO_INCREMENT, experiment_id INT unsigned NOT NULL, species TINYTEXT NOT NULL, strain TINYTEXT NOT NULL, PRIMARY KEY (serial_id));
+$mysql> CREATE TABLE images (image_id INT unsigned AUTO_INCREMENT, serial_id INT unsigned NOT NULL, image_url VARCHAR(250) NOT NULL, date DATETIME(0) NOT NULL, PRIMARY KEY (image_id));
 $mysql> CREATE TABLE experiments (experiment_id INT unsigned AUTO_INCREMENT, doc_url VARCHAR(250) NOT NULL, PRIMARY KEY (experiment_id));
 $mysql> ALTER TABLE plates AUTO_INCREMENT = 1000;
 $mysql> ALTER TABLE images AUTO_INCREMENT = 1;
